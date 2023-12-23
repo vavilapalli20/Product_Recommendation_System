@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <title>Product Recommender System</title>
+</head>
+<body>
+
+    <div class=" bg-nav text-light d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h3 class="my-0 mr-md-auto font-weight-normal"> DEUS</h3>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a class="p-2 text-light" href="/home">Home</a>
+            <a class="p-2 text-light" href="/recommend">Recommend</a>
+            <a class="p-2 text-light" href="/contact">Contact</a>
+            <a class="p-2 text-light" href="#">Settings</a>
+        </nav>
+        <a class="btn btn-outline-primary" href="#">Logout</a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class = "text-Black" style="font-size:50px">Products Recommender</h1>
+                <form action="/recommend_products">
+                    <input name="user_input" class="form-control"><br>
+                    <input type="submit" class="btn btn-lg btn-warning">
+                </form>
+            </div>
+
+            {% if data %}
+
+             {% for i in data %}
+                <div class="col-md-3" style="margin-top:30px">-->
+                    <div class="card">
+                        <div class="card-body">
+<!--                            <img class="card-img-top" src="https://graceloveslace.com.au/cdn/shop/products/grace-loves-lace.shop_.wedding-dresses-song-001.jpg">-->
+                            <h2>{{i[0]}}</h2>
+                            <button class="btn btn-success bnt-block">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+             {% endfor %}
+
+            {% if data %}
+
+<!--            <div class="col-md-3" style="margin-top:30px">-->
+<!--                <div class="card">-->
+<!--                    <div class="card-body">-->
+<!--                        <img class="card-img-top" src="https://graceloveslace.com.au/cdn/shop/products/grace-loves-lace.shop_.wedding-dresses-song-001.jpg">-->
+<!--                        <h2>Dresses</h2>-->
+<!--                        <button class="btn btn-success bnt-block">Buy Now</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-md-3" style="margin-top:30px">-->
+<!--                <div class="card">-->
+<!--                    <div class="card-body">-->
+<!--                        <img class="card-img-top" src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/20833482/2022/11/19/6ceee8ff-aba0-42c4-8627-408adff34f381668873931522CasualPolyesterBlendSquareNeckAndLongSleevesStylishPrintedTo1.jpg">-->
+<!--                        <h2>Tops</h2>-->
+<!--                        <button class="btn btn-success bnt-block">Buy Now</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-md-3" style="margin-top:30px">-->
+<!--                <div class="card">-->
+<!--                    <div class="card-body">-->
+<!--                        <img class="card-img-top" src="https://images-cdn.ubuy.co.in/633b61282809993e493e1d58-desk-organizers-and-accessories-office.jpg">-->
+<!--                        <h2>Accessories & Supplies</h2>-->
+<!--                        <button class="btn btn-success bnt-block">Buy Now</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-md-3" style="margin-top:30px">-->
+<!--                <div class="card">-->
+<!--                    <div class="card-body">-->
+<!--                        <img class="card-img-top" src="https://i.pinimg.com/1200x/e7/5d/db/e75ddbda351d44e24b6b8099fa200aad.jpg">-->
+<!--                        <h2>Camera & Photo</h2>-->
+<!--                        <button class="btn btn-success bnt-block">Buy Now</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+        </div>
+    </div>
+
+</body>
+</html>
